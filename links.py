@@ -23,7 +23,7 @@ class Link:
             print(l.get_attribute('href'))
             self.data['Link'] = l.get_attribute('href')
             p = pd.DataFrame([self.data])
-            p.to_csv(f"C:/imp codes/Canada/citylink/{cate.lower()}.csv", mode='a', header=not os.path.exists(f"C:/imp codes/Canada/citylink/{cate.lower()}.csv"), index=False)
+            p.to_csv(f"path to save/{cate.lower()}.csv", mode='a', header=not os.path.exists(f"path to save/{cate.lower()}.csv"), index=False)
 
 f_name = str(input("Enter City: "))
 url = str(input("Enter Page Url: "))
