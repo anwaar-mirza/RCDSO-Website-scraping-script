@@ -307,13 +307,13 @@ class CanadianDentistData:
 
     def mov_into_file(self, n):
         p = pd.DataFrame([self.data_dict])
-        p.to_csv(f"C:/imp codes/Canada/citydata/{n}.csv", mode='a', header=not os.path.exists(f"C:/imp codes/Canada/citydata/{n}.csv"), index=False)
+        p.to_csv(f"path to save/{n}.csv", mode='a', header=not os.path.exists(f"path to save/{n}.csv"), index=False)
 
 
 links = []
 name = str(input("Enter Name: "))
 bot = CanadianDentistData()
-with open(f"C:/imp codes/Canada/citylink/{name}.csv") as file:
+with open(f"path to file/{name}.csv") as file:
     for f in file:
         links.append(f)
 
@@ -326,8 +326,8 @@ for l in links:
         bot.current_Status()
         bot.get_Type(name)
         bot.get_primary_practice_information()
-        #bot.get_other_information()
-        #bot.get_other_professional_information()
+        bot.get_other_information()
+        bot.get_other_professional_information()
         bot.get_academic_information()
         bot.get_certificates()
         bot.add_url(l)
